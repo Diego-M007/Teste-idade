@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link href="style (1).css" rel="stylesheet">
+  <title>Verificar Fase da Vida</title>
+  <script>
+    function verificarFase() {
+      // obter nome e idade do usuário
+      const nome = document.getElementById("nome").value;
+      const idade = parseInt(document.getElementById("idade").value);
+
+      // verificar fase da vida
+      let fase, classe;
+      if (idade >= 0 && idade <= 11) {
+        fase = "infância";
+        classe = "infancia";
+      } else if (idade >= 12 && idade <= 20) {
+        fase = "adolescência";
+        classe = "adolescencia";
+      } else if (idade >= 21 && idade <= 65) {
+        fase = "vida adulta";
+        classe = "vida-adulta";
+      } else if (idade >= 66 && idade <= 120) {
+        fase = "terceira idade";
+        classe = "terceira-idade";
+      } else if (idade >= 121 && idade <= 1000) {
+        fase = "Nivel Rainha Elizabeth";
+        classe = "nivel-rainha";
+      } else if (idade >= 1000) {
+        fase = "Você foi discipulo de Jesus?";
+        classe = "nivel-deus";
+      }
+        // exibir resultado na div
+        const resultadoDiv = document.getElementById("resultado");
+        resultadoDiv.innerHTML = `${nome}, você está na fase da ${fase}.`;
+        resultadoDiv.classList = [classe];
+      }
+
+
+  </script>
+</head>
+
+<body>
+  <h1>Verificar Fase da Vida</h1>
+  <div class="div2">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome"><br>
+    <label for="idade">Idade:</label>
+    <input type="number" id="idade"><br>
+    <button onclick="verificarFase()">Verificar</button>
+
+    <div id="resultado"></div>
+  </div>
+</body>
+
+</html>
